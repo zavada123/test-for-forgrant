@@ -1,0 +1,482 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-bold';
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto';
+}
+
+body section.calc {
+  background: url("../img/bg.png") no-repeat center center/cover;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body section.calc .container {
+  max-width: 1020px;
+  width: 100%;
+  padding: 0 15px;
+  margin: auto;
+}
+
+body section.calc .container .calс__header {
+  width: 100%;
+  height: 100px;
+  border: 1px solid rgba(146, 232, 254, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+body section.calc .container .calс__header h1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  font-size: 32px;
+  color: #fff;
+  margin: auto;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper {
+  width: 300px;
+  margin-right: 23px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper select.currency__select {
+  display: none;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper select:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select {
+  position: relative;
+  width: 100%;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select .currency__select-trigger {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  border: 1px solid #92e8fe;
+  border-radius: 5px;
+  height: 53px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #1e252b;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select .currency__select-trigger:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 7px;
+  height: 7px;
+  top: 50%;
+  right: 25px;
+  margin-top: -3px;
+  border-bottom: 1px solid #92e8fe;
+  border-right: 1px solid #92e8fe;
+  -webkit-transform: rotate(45deg) translateY(-50%);
+  transform: rotate(45deg) translateY(-50%);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select .currency-options {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  right: 0;
+  min-width: 100%;
+  border: 1px solid #92e8fe;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.07);
+  background: #1e252b;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transform: translateY(-15px);
+  transform: translateY(-15px);
+  z-index: 4;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select .currency-options .currency-option {
+  position: relative;
+  display: block;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #fff;
+  line-height: 47px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select .currency-options .currency-option:before {
+  background: transparent;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select .currency-options .currency-option:first-of-type {
+  border-radius: 4px 4px 0 0;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select .currency-options .currency-option:last-of-type {
+  border-bottom: 0;
+  border-radius: 0 0 4px 4px;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select .currency-options .currency-option:hover,
+body section.calc .container .calс__header .currency__select-wrapper .currency__select .currency-options .currency-option.selection {
+  background: transparent;
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select.opened .currency__select-trigger:after {
+  margin-top: 3px;
+  -webkit-transform: rotate(-135deg) translateY(-50%);
+  transform: rotate(-135deg) translateY(-50%);
+}
+
+body section.calc .container .calс__header .currency__select-wrapper .currency__select.opened .currency-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+body section.calc .container .calc__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+body section.calc .container .calc__items .calc__item {
+  padding: 25px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+body section.calc .container .calc__items .calc__item.etherium {
+  background-color: #2d4934;
+}
+
+body section.calc .container .calc__items .calc__item.litecoin {
+  margin: 0 30px;
+  background-color: #333333;
+}
+
+body section.calc .container .calc__items .calc__item.bitcoin {
+  background-color: #301103;
+}
+
+body section.calc .container .calc__items .calc__item:before {
+  background: url("../img/bg_item.png") no-repeat center center/cover;
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+}
+
+body section.calc .container .calc__items .calc__item * {
+  position: relative;
+  z-index: 3;
+}
+
+body section.calc .container .calc__items .calc__item .currency__name {
+  text-align: center;
+  font-size: 17px;
+  color: white;
+  font-family: 'Roboto-bold';
+  font-weight: bold;
+}
+
+body section.calc .container .calc__items .calc__item .currency__img {
+  width: 100%;
+  height: auto;
+}
+
+body section.calc .container .calc__items .calc__item .currency__img img {
+  display: block;
+  max-width: 110px;
+  margin: auto;
+}
+
+body section.calc .container .calc__items .calc__item .currency__price {
+  font-size: 20px;
+  color: white;
+  font-family: 'Roboto-bold';
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+body section.calc .container .calc__items .calc__item .currency__price p {
+  margin: 5px 0;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch input {
+  display: none;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch {
+  position: relative;
+  display: block;
+  vertical-align: top;
+  width: 45px;
+  height: 18px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-input {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  opacity: 50;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-label {
+  position: relative;
+  display: block;
+  height: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  background-color: #c4c4c4;
+  -webkit-box-shadow: inset 1.362px 2.673px 7px 0px rgba(27, 36, 40, 0.56);
+  box-shadow: inset 1.362px 2.673px 7px 0px rgba(27, 36, 40, 0.56);
+  border-radius: inherit;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-label:before,
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-label:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -.5em;
+  line-height: 1;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-input:checked ~ .switch-label {
+  background: #3eb5f1;
+  -webkit-box-shadow: inset 1.362px 2.673px 7px 0px rgba(27, 36, 40, 0.56);
+  box-shadow: inset 1.362px 2.673px 7px 0px rgba(27, 36, 40, 0.56);
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-input:checked ~ .switch-label:before {
+  opacity: 0;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-input:checked ~ .switch-label:after {
+  opacity: 1;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-handle {
+  position: absolute;
+  top: -3px;
+  left: 21px;
+  width: 24px;
+  height: 24px;
+  background: url("../img/switch.png") no-repeat center center/cover;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-input:checked ~ .switch-handle {
+  left: -4px;
+  -webkit-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-label,
+body section.calc .container .calc__items .calc__item .currency__percent-switch .switch .switch-handle {
+  transition: All 0.3s ease;
+  -webkit-transition: All 0.3s ease;
+  -moz-transition: All 0.3s ease;
+  -o-transition: All 0.3s ease;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent-switch p {
+  color: white;
+  margin: 5px 0;
+  font-size: 14px;
+  font-family: 'Roboto-bold';
+  font-weight: bold;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent p {
+  color: rgba(255, 255, 255, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent p span {
+  font-family: 'Roboto-bold';
+  font-weight: bold;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent p span.priceup {
+  color: #70c446;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent p span.pricedown {
+  color: #c80e24;
+}
+
+body section.calc .container .calc__items .calc__item .currency__percent p span:nth-child(2) {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  body section.calc .container .calc__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  body section.calc .container .calc__items .calc__item:before {
+    height: 100%;
+  }
+
+  body section.calc .container .calc__items .calc__item {
+    margin: 20px 0;
+  }
+
+  body section.calc .container .calc__items .calc__item.litecoin {
+    margin: 20px 0;
+  }
+
+  body section.calc .container .calс__header {
+    width: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  body section.calc .container .calс__header .currency__select-wrapper {
+    margin: 20px auto 0;
+    width: 240px;
+  }
+
+  body section.calc .container .calс__header {
+    padding: 20px;
+    height: auto;
+  }
+}

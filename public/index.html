@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="calc">
+        <div class="container">
+            <div class="calс__header">
+                <h1>Select currency to exhange:</h1>
+                <div class="currency__select-wrapper">
+                    <select name="currency__select" id="currency__select" class="currency__select" value="">
+                                <option value="USD" selected>usd</option>
+                                <option value="EUR">eur</option>
+                                <option value="RUB">rub</option>
+                                <option value="GBP">gbp</option>
+                            </select>
+                    <div class="currency__select">
+                        <span class="currency__select-trigger">usd</span>
+                        <div class="currency-options">
+                            <span class="currency-option" data-value="USD">usd</span>
+                            <span class="currency-option" data-value="EUR">eur</span>
+                            <span class="currency-option" data-value="RUB">rub</span>
+                            <span class="currency-option" data-value="GBP">gbp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calc__items">
+                <div class="calc__item etherium">
+                    <h2 class="currency__name">Etherium</h2>
+                    <div class="currency__img"><img src="img/etherium.png" /></div>
+                    <div class="currency__price">
+                        <p>Price:</p>
+                        <p data-id="etherium"></p>
+                    </div>
+                    <div class="currency__percent-switch">
+                        <p>Percent change</p>
+                        <label class="switch">
+                            <input type="checkbox" id="percent-change" class="switch-input" name="percent-change" />
+                            <span class="switch-label"></span> 
+                            <span class="switch-handle"></span> 
+                        </label>
+                    </div>
+                    <div class="currency__percent">
+                        <p><span>Hour change</span><span data-id="etherium" class="profit"></span></p>
+                        <p><span>Day change</span><span data-id="etherium" class="red"></span></p>
+                        <p><span>Week change</span><span data-id="etherium"></span></p>
+                        <p><span>Month change</span><span data-id="etherium"></span></p>
+                    </div>
+                </div>
+                <div class="calc__item litecoin">
+                    <h2 class="currency__name">Litecoin</h2>
+                    <div class="currency__img"><img src="img/litecoin.png" /></div>
+                    <div class="currency__price">
+                        <p>Price:</p>
+                        <p data-id="litecoin"></p>
+                    </div>
+                    <div class="currency__percent-switch">
+                        <p>Percent change</p>
+                        <label class="switch">
+                            <input type="checkbox" id="percent-change" class="switch-input" name="percent-change" />
+                            <span class="switch-label"></span> 
+                            <span class="switch-handle"></span> 
+                        </label>
+                    </div>
+                    <div class="currency__percent">
+                        <p><span>Hour change</span><span data-id="litecoin" class="profit"></span></p>
+                        <p><span>Day change</span><span data-id="litecoin" class="red"></span></p>
+                        <p><span>Week change</span><span data-id="litecoin"></span></p>
+                        <p><span>Month change</span><span data-id="litecoin"></span></p>
+                    </div>
+                </div>
+                <div class="calc__item bitcoin">
+                    <h2 class="currency__name">Bitcoin</h2>
+                    <div class="currency__img"><img src="img/bitcoin.png" /></div>
+                    <div class="currency__price">
+                        <p>Price:</p>
+                        <p data-id="bitcoin"></p>
+                    </div>
+                    <div class="currency__percent-switch">
+                        <p>Percent change</p>
+                        <label class="switch">
+                            <input type="checkbox" id="percent-change" class="switch-input" name="percent-change" />
+                            <span class="switch-label"></span> 
+                            <span class="switch-handle"></span> 
+                        </label>
+                    </div>
+                    <div class="currency__percent">
+                        <p><span>Hour change</span><span data-id="bitcoin"></span></p>
+                        <p><span>Day change</span><span data-id="bitcoin"></span></p>
+                        <p><span>Week change</span><span data-id="bitcoin"></span></p>
+                        <p><span>Month change</span><span data-id="bitcoin"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/polyfill.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
